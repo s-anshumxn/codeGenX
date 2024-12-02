@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: FPlugin
+Bundle-SymbolicName: FPlugin;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime;bundle-version="3.31.100",
+ org.eclipse.ui.ide;bundle-version="3.22.200",
+ org.eclipse.core.resources;bundle-version="3.20.200",
+ org.eclipse.jface.text;bundle-version="3.25.100",
+ org.eclipse.ui.editors;bundle-version="3.17.300"
+Automatic-Module-Name: FPlugin
+Bundle-ClassPath: .,
+ lib/gson-2.8.8.jar
+Bundle-RequiredExecutionEnvironment: JavaSE-21

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <!-- Define the commands -->
+   <extension point="org.eclipse.ui.commands">
+      <command id="com.example.pythonapiplugin.Refactor" name="Refactor">
+      </command>
+      <command id="com.example.pythonapiplugin.Documentation" name="Documentation">
+      </command>
+      <command id="com.example.pythonapiplugin.Migration" name="Migration">
+      </command>
+   </extension>
+
+   <!-- Define the handlers for the commands -->
+   <extension point="org.eclipse.ui.handlers">
+      <handler class="com.example.pythonapiplugin.Refactor" commandId="com.example.pythonapiplugin.Refactor">
+      </handler>
+      <handler class="com.example.pythonapiplugin.Documentation" commandId="com.example.pythonapiplugin.Documentation">
+      </handler>
+      <handler class="com.example.pythonapiplugin.Migration" commandId="com.example.pythonapiplugin.Migration">
+      </handler>
+   </extension>
+
+   <!-- Add the commands to a menu -->
+   <extension point="org.eclipse.ui.menus">
+      <menuContribution locationURI="menu:org.eclipse.ui.main.menu">
+         <menu id="com.example.pythonapiplugin.menu" label="CodeGenX">
+            <command commandId="com.example.pythonapiplugin.Refactor" label="Code Refactor" style="push">
+            </command>
+            <command commandId="com.example.pythonapiplugin.Documentation" label="Code Documentation" style="push">
+            </command>
+            <command commandId="com.example.pythonapiplugin.Migration" label="Code Transformation" style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+
+   <!-- Define the views -->
+   <extension point="org.eclipse.ui.views">
+      <view
+         id="com.example.pythonapiplugin.RefactorView"
+         name="RefactorView"
+         class="com.example.pythonapiplugin.RefactorView"
+         category="org.eclipse.ui.category.sample">
+      </view>
+      <view
+         id="com.example.pythonapiplugin.MigrationView"
+         name="MigrationView"
+         class="com.example.pythonapiplugin.MigrationView"
+         category="org.eclipse.ui.category.sample">
+      </view>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings">
+      <key
+         commandId="com.example.pythonapiplugin.Refactor"
+         contextId="org.eclipse.ui.contexts.window"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="M1+R">
+     </key>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings">
+      <key
+         commandId="com.example.pythonapiplugin.Documentation"
+         contextId="org.eclipse.ui.contexts.window"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="M1+U">
+     </key>
+   </extension>
+   
+   <extension point="org.eclipse.ui.bindings">
+      <key
+         commandId="com.example.pythonapiplugin.Migration"
+         contextId="org.eclipse.ui.contexts.window"
+         schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+         sequence="M1+Y">
+     </key>
+   </extension>
+   
+</plugin>
